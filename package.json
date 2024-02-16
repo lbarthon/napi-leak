@@ -1,0 +1,12 @@
+{
+  "name": "napi-leak",
+  "packageManager": "yarn@3.3.1",
+  "dependencies": {
+    "@napi-rs/cli": "^2.18.0"
+  },
+  "scripts": {
+    "build": "napi build",
+    "build-release": "napi build --release",
+    "run-leak": "node --expose_gc run_leak.js"
+  }
+}

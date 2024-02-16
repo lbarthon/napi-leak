@@ -1,0 +1,14 @@
+[package]
+name = "napi-leak"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi = { version = "2.15.1", default-features = false, features = ["napi9", "async", "tokio_rt"] }
+napi-derive = { version = "2.15.1", default-features = false, features = ["strict", "type-def"] }
+
+[build-dependencies]
+napi-build = "2.1.0"
