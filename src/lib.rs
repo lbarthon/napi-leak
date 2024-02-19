@@ -3,7 +3,7 @@ use napi::{bindgen_prelude::{Reference, SharedReference}, Env};
 #[macro_use]
 extern crate napi_derive;
 
-#[napi(constructor)]
+#[napi]
 pub struct A;
 
 pub struct UsesA<'a> {
@@ -19,6 +19,11 @@ pub struct B {
 
 #[napi]
 impl A {
+    #[napi(factory)]
+    pub fn new() -> Self {
+        Self {}
+    }
+
     #[napi]
     pub fn new_b(&self, reference: Reference<A>, env: Env) -> napi::Result<B> {
         Ok(B {
